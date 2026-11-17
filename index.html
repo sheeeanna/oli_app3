@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Игротека малыша: 0–6 месяцев</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Nunito & Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Rubik:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cloud: '#FFFDF9',
+            cream: '#FFF7EB',
+            ink: '#2D2A32',
+            slateSoft: '#686272',
+            sun: '#FFCA4B',
+            sunLight: '#FFF3D1',
+            sunDark: '#9A6B00',
+            mint: '#4CC9B0',
+            mintLight: '#DFF8F2',
+            mintDark: '#166F5E',
+            coral: '#FF7E6B',
+            coralLight: '#FFE7E3',
+            coralDark: '#9F2F20',
+            sky: '#5AB2FF',
+            skyLight: '#E3F2FF',
+            skyDark: '#1B5E9C',
+            lavender: '#A688FA',
+            lavenderLight: '#EFEAFF',
+            lavenderDark: '#4D3299',
+          },
+          fontFamily: {
+            display: ['"Nunito"', 'sans-serif'],
+            body: ['"Rubik"', 'sans-serif'],
+          },
+          boxShadow: {
+            tactile: '0 10px 28px -8px rgba(45, 42, 50, 0.08), 0 2px 6px -1px rgba(45, 42, 50, 0.04)',
+            tactileHover: '0 18px 36px -10px rgba(45, 42, 50, 0.13), 0 4px 10px -2px rgba(45, 42, 50, 0.05)',
+            pill: '0 4px 12px -2px rgba(45, 42, 50, 0.08)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #2D2A32;
+      font-family: 'Rubik', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(255, 202, 75, 0.14) 0%, transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(90, 178, 255, 0.13) 0%, transparent 30%),
+        radial-gradient(circle at 85% 82%, rgba(76, 201, 176, 0.12) 0%, transparent 32%);
+      background-attachment: fixed;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    /* Tactile playful card transitions */
+    .story-card {
+      border-radius: 28px;
+      transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.3s ease,
+                  border-color 0.3s ease;
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Pop animation when checking complete */
+    @keyframes popBounce {
+      0% { transform: scale(1); }
+      40% { transform: scale(0.94); }
+      75% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+    .animate-pop {
+      animation: popBounce 0.36s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Card entrance animation */
+    @keyframes floatUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-card-in {
+      animation: floatUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF7EB;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #DFD6C7;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C7BCAE;
+    }
+
+    /* Hide scrollbar on horizontal mobile strips */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-sun/40 selection:text-ink">
+
+  <!-- Top Playful Book Header & Progress Tracker -->
+  <header class="pt-6 pb-4 sm:pt-10 sm:pb-6 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-white/90 backdrop-blur-md border-2 border-[#F2ECE1] rounded-[32px] p-6 sm:p-9 shadow-tactile relative overflow-hidden">
+        <!-- Decorative geometric shapes in background -->
+        <div class="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-sunLight/70"></div>
+        <div class="pointer-events-none absolute -bottom-12 right-32 w-32 h-32 rounded-full bg-mintLight/60"></div>
+
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-7">
+          <!-- Title & Intro -->
+          <div class="max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lavenderLight text-lavenderDark text-xs font-display font-extrabold tracking-wide mb-3.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-lavender"></span>
+              <span>ИГРОТЕКА ПЕРВОГО ПОЛУГОДИЯ</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-display font-black leading-[1.12] text-ink mb-3">
+              Маленькие шаги и большие открытия
+            </h1>
+            <p class="text-sm sm:text-base text-slateSoft leading-relaxed">
+              Тёплая коллекция развивающих игр от рождения до полугода. Нажмите на любую карточку, чтобы открыть её крупно для чтения одной рукой, и отмечайте освоенные занятия.
+            </p>
+          </div>
+
+          <!-- Progress Dashboard Card -->
+          <div class="bg-cream border-2 border-[#F3E9D8] rounded-[24px] p-5 sm:p-6 lg:w-[390px] shrink-0">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-display font-extrabold text-sm text-ink">Карта прогресса</span>
+              <span id="total-progress-badge" class="px-3 py-1 rounded-full bg-sun text-ink font-display font-extrabold text-xs">
+                0 из 12 игр
+              </span>
+            </div>
+
+            <!-- Overall Progress Bar -->
+            <div class="w-full h-3.5 bg-white rounded-full p-0.5 border border-[#EADEC9] mb-4 overflow-hidden">
+              <div
+                id="total-progress-bar"
+                class="h-full rounded-full bg-gradient-to-r from-sun via-coral to-mint transition-all duration-500 ease-out"
+                style="width: 0%"
+              ></div>
+            </div>
+
+            <!-- Separate Counters per Age Group -->
+            <div class="grid grid-cols-2 gap-2.5 mb-4">
+              <div class="bg-white rounded-2xl px-3.5 py-2.5 border border-[#EFE6D6]">
+                <div class="flex items-center gap-1.5 text-[11px] font-medium text-slateSoft mb-0.5">
+                  <span class="w-2 h-2 rounded-full bg-coral"></span>
+                  <span>0–3 месяца</span>
+                </div>
+                <div id="progress-0-3" class="font-display font-extrabold text-base text-ink">
+                  0 / 6
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl px-3.5 py-2.5 border border-[#EFE6D6]">
+                <div class="flex items-center gap-1.5 text-[11px] font-medium text-slateSoft mb-0.5">
+                  <span class="w-2 h-2 rounded-full bg-sky"></span>
+                  <span>3–6 месяцев</span>
+                </div>
+                <div id="progress-3-6" class="font-display font-extrabold text-base text-ink">
+                  0 / 6
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls: Hide Completed & Reset -->
+            <div class="flex items-center justify-between gap-2 pt-1 text-xs">
+              <label class="inline-flex items-center gap-2 cursor-pointer select-none font-medium text-ink">
+                <input
+                  type="checkbox"
+                  id="hide-completed-toggle"
+                  class="w-4 h-4 rounded-md accent-mint cursor-pointer"
+                />
+                <span>Скрыть выполненные</span>
+              </label>
+
+              <button
+                id="reset-progress-btn"
+                type="button"
+                class="font-medium text-slateSoft hover:text-coralDark transition-colors underline decoration-dotted underline-offset-4"
+              >
+                Сбросить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Age Tabs & Skill Filter Pills -->
+  <section class="sticky top-0 z-20 bg-cloud/92 backdrop-blur-md border-b border-[#F2ECE1] py-3.5 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3.5">
+      <!-- Age Tabs -->
+      <div class="inline-flex p-1.5 rounded-full bg-[#F5EFE6] self-start overflow-x-auto max-w-full no-scrollbar">
+        <button
+          type="button"
+          data-age="all"
+          class="age-tab active px-4 sm:px-5 py-2 rounded-full font-display font-extrabold text-xs sm:text-sm bg-white text-ink shadow-pill transition-all whitespace-nowrap"
+        >
+          Все возрасты (12)
+        </button>
+        <button
+          type="button"
+          data-age="0-3"
+          class="age-tab px-4 sm:px-5 py-2 rounded-full font-display font-extrabold text-xs sm:text-sm text-slateSoft hover:text-ink transition-all whitespace-nowrap"
+        >
+          0–3 месяца (6)
+        </button>
+        <button
+          type="button"
+          data-age="3-6"
+          class="age-tab px-4 sm:px-5 py-2 rounded-full font-display font-extrabold text-xs sm:text-sm text-slateSoft hover:text-ink transition-all whitespace-nowrap"
+        >
+          3–6 месяцев (6)
+        </button>
+      </div>
+
+      <!-- Skill Filter Chips -->
+      <div id="skill-filters" class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
+        <button
+          type="button"
+          data-skill="all"
+          class="skill-chip active px-3.5 py-2 rounded-full font-display font-bold text-xs bg-ink text-white transition-all whitespace-nowrap"
+        >
+          Все навыки
+        </button>
+        <button
+          type="button"
+          data-skill="Моторика"
+          class="skill-chip px-3.5 py-2 rounded-full font-display font-bold text-xs bg-coralLight text-coralDark hover:brightness-95 transition-all whitespace-nowrap inline-flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-coral"></span>
+          <span>Моторика</span>
+        </button>
+        <button
+          type="button"
+          data-skill="Сенсорика"
+          class="skill-chip px-3.5 py-2 rounded-full font-display font-bold text-xs bg-sunLight text-sunDark hover:brightness-95 transition-all whitespace-nowrap inline-flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-sun"></span>
+          <span>Сенсорика</span>
+        </button>
+        <button
+          type="button"
+          data-skill="Речь и слух"
+          class="skill-chip px-3.5 py-2 rounded-full font-display font-bold text-xs bg-skyLight text-skyDark hover:brightness-95 transition-all whitespace-nowrap inline-flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-sky"></span>
+          <span>Речь и слух</span>
+        </button>
+        <button
+          type="button"
+          data-skill="Эмоции и контакт"
+          class="skill-chip px-3.5 py-2 rounded-full font-display font-bold text-xs bg-mintLight text-mintDark hover:brightness-95 transition-all whitespace-nowrap inline-flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-mint"></span>
+          <span>Эмоции и контакт</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Cards Grid -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-10">
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+      <p id="results-caption" class="text-xs sm:text-sm font-medium text-slateSoft">
+        Показаны все 12 карточек
+      </p>
+      <span class="text-xs text-slateSoft bg-white px-3 py-1 rounded-full border border-[#F0E9DD]">
+        Совет: нажмите на карточку, чтобы открыть режим чтения одной рукой
+      </span>
+    </div>
+
+    <!-- Grid Container -->
+    <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <!-- Cards rendered by JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div
+      id="empty-state"
+      class="hidden bg-white border-2 border-dashed border-[#E5DCCB] rounded-[32px] p-10 sm:p-14 text-center max-w-lg mx-auto my-8"
+    >
+      <div class="w-16 h-16 rounded-full bg-sunLight mx-auto mb-4 flex items-center justify-center">
+        <div class="w-7 h-7 rounded-full bg-sun"></div>
+      </div>
+      <h2 class="font-display font-extrabold text-2xl text-ink mb-2">
+        По этим фильтрам карточек нет
+      </h2>
+      <p class="text-sm text-slateSoft mb-6 leading-relaxed">
+        Попробуйте выбрать другой возрастной этап, категорию навыка или отключите фильтр «Скрыть выполненные».
+      </p>
+      <button
+        id="reset-filters-btn"
+        type="button"
+        class="px-6 py-3 rounded-full bg-ink text-white font-display font-bold text-sm hover:opacity-90 transition-opacity"
+      >
+        Показать все игры
+      </button>
+    </div>
+  </main>
+
+  <!-- Focus Mode Modal (Large One-Handed Reading View) -->
+  <div
+    id="focus-modal"
+    class="fixed inset-0 z-50 hidden bg-ink/40 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      id="focus-modal-panel"
+      class="bg-cloud w-full sm:max-w-2xl max-h-[92vh] sm:max-h-[88vh] rounded-t-[32px] sm:rounded-[32px] shadow-2xl border-2 border-white flex flex-col overflow-hidden transition-transform duration-300"
+    >
+      <!-- Modal Top Controls -->
+      <div class="px-5 sm:px-7 py-4 bg-white border-b border-[#F2ECE1] flex items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-2">
+          <button
+            id="focus-prev-btn"
+            type="button"
+            class="w-10 h-10 rounded-full bg-cream hover:bg-sunLight text-ink flex items-center justify-center transition-colors"
+            title="Предыдущая игра"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button
+            id="focus-next-btn"
+            type="button"
+            class="w-10 h-10 rounded-full bg-cream hover:bg-sunLight text-ink flex items-center justify-center transition-colors"
+            title="Следующая игра"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <span id="focus-counter" class="text-xs font-display font-extrabold text-slateSoft ml-1">
+            Карточка 1 из 12
+          </span>
+        </div>
+
+        <button
+          id="focus-close-btn"
+          type="button"
+          class="px-4 py-2 rounded-full bg-[#F4EFE6] hover:bg-[#EAE2D4] text-ink font-display font-bold text-xs inline-flex items-center gap-1.5 transition-colors"
+        >
+          <span>Закрыть</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Focus Content -->
+      <div id="focus-modal-body" class="overflow-y-auto p-5 sm:p-8 space-y-6">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Sticky Bottom Action Bar for One-Handed Thumb Reach -->
+      <div id="focus-modal-footer" class="p-4 sm:px-8 sm:py-5 bg-white border-t border-[#F2ECE1] shrink-0">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline Custom Reset Confirmation Toast (No confirm/alert) -->
+  <div
+    id="reset-toast"
+    class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden bg-ink text-white px-5 py-3.5 rounded-full shadow-xl flex items-center gap-4 text-xs sm:text-sm max-w-[94vw]"
+  >
+    <span class="font-medium">Сбросить все отметки прогресса?</span>
+    <div class="flex items-center gap-2">
+      <button
+        id="confirm-reset-yes"
+        type="button"
+        class="px-3.5 py-1.5 rounded-full bg-coral text-white font-display font-bold hover:brightness-110 transition-all"
+      >
+        Сбросить
+      </button>
+      <button
+        id="confirm-reset-no"
+        type="button"
+        class="px-3.5 py-1.5 rounded-full bg-white/15 text-white hover:bg-white/25 transition-colors"
+      >
+        Отмена
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-10 py-8 px-4 sm:px-8 border-t border-[#F2ECE1] bg-white/60">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slateSoft">
+      <p class="font-display font-bold text-ink text-sm">
+        Игротека малыша &middot; Тёплые занятия каждый день
+      </p>
+      <p>
+        Занимайтесь в спокойном темпе, когда малыш сыт и полон сил
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. BRIGHT, WARM CHILDREN'S BOOK SVG ILLUSTRATIONS (No dark tones, no emoji)
+    // =========================================================================
+    const bookIllustrations = {
+      contrastSunAndCloud: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFF4D8"/>
+          <circle cx="65" cy="42" r="24" fill="#FFE6A3"/>
+          <circle cx="348" cy="172" r="34" fill="#FFE6A3"/>
+          <!-- Left Contrast Card -->
+          <g transform="rotate(-6 142 108)">
+            <rect x="86" y="42" width="110" height="132" rx="20" fill="#FFFFFF" stroke="#FFCA4B" stroke-width="3"/>
+            <circle cx="141" cy="108" r="34" fill="#3B3547"/>
+            <circle cx="141" cy="108" r="21" fill="#FFFFFF"/>
+            <circle cx="141" cy="108" r="9" fill="#FF7E6B"/>
+          </g>
+          <!-- Right Contrast Card -->
+          <g transform="rotate(6 258 108)">
+            <rect x="204" y="42" width="110" height="132" rx="20" fill="#FFFFFF" stroke="#5AB2FF" stroke-width="3"/>
+            <path d="M228 76 L290 76 M228 96 L290 96 M228 116 L290 116 M228 136 L290 136" stroke="#3B3547" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="259" cy="106" r="16" fill="#FFCA4B"/>
+          </g>
+          <!-- Sparkle Dots -->
+          <circle cx="200" cy="34" r="5" fill="#FF7E6B"/>
+          <circle cx="332" cy="54" r="6" fill="#4CC9B0"/>
+        </svg>
+      `,
+      tummyTimePillow: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFEBE7"/>
+          <!-- Soft Play Mat -->
+          <rect x="36" y="152" width="328" height="22" rx="11" fill="#FFD1C9"/>
+          <!-- Rainbow Bolster Cushion -->
+          <ellipse cx="188" cy="138" rx="34" ry="20" fill="#FFCA4B"/>
+          <path d="M162 138 Q188 122 214 138" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+          <!-- Cute Friendly Baby Character on Tummy -->
+          <path d="M196 116 C228 114 268 124 294 140 C304 146 298 156 284 156 L208 156 Z" fill="#4CC9B0"/>
+          <!-- Baby Head & Rosy Cheeks -->
+          <circle cx="154" cy="94" r="28" fill="#FFE2CE"/>
+          <path d="M148 67 Q156 58 164 68" stroke="#D98A6C" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="144" cy="92" r="3" fill="#3B3547"/>
+          <circle cx="160" cy="92" r="3" fill="#3B3547"/>
+          <circle cx="139" cy="100" r="4.5" fill="#FF9E94" fill-opacity="0.65"/>
+          <circle cx="165" cy="100" r="4.5" fill="#FF9E94" fill-opacity="0.65"/>
+          <path d="M148 103 Q152 108 157 103" stroke="#3B3547" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Little Arms Propped Up -->
+          <path d="M164 118 L148 148 L128 150" stroke="#FFE2CE" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Cheerful Sun Toy Ahead -->
+          <circle cx="88" cy="126" r="18" fill="#FF7E6B"/>
+          <circle cx="88" cy="126" r="9" fill="#FFF4D8"/>
+        </svg>
+      `,
+      smilingDialogue: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#E3F8F3"/>
+          <circle cx="200" cy="105" r="78" fill="#FFFFFF"/>
+          <!-- Left Warm Sun Face (Parent) -->
+          <circle cx="136" cy="106" r="38" fill="#FFCA4B"/>
+          <circle cx="128" cy="100" r="3.2" fill="#3B3547"/>
+          <circle cx="148" cy="100" r="3.2" fill="#3B3547"/>
+          <circle cx="124" cy="110" r="5" fill="#FF7E6B" fill-opacity="0.5"/>
+          <circle cx="152" cy="110" r="5" fill="#FF7E6B" fill-opacity="0.5"/>
+          <path d="M131 112 Q138 121 146 112" stroke="#3B3547" stroke-width="2.8" stroke-linecap="round"/>
+          <!-- Right Soft Peach Moon/Baby Face -->
+          <circle cx="264" cy="112" r="32" fill="#FFD9C8"/>
+          <circle cx="255" cy="107" r="3" fill="#3B3547"/>
+          <circle cx="271" cy="107" r="3" fill="#3B3547"/>
+          <circle cx="251" cy="115" r="4.5" fill="#FF7E6B" fill-opacity="0.55"/>
+          <circle cx="275" cy="115" r="4.5" fill="#FF7E6B" fill-opacity="0.55"/>
+          <circle cx="263" cy="118" r="4.5" fill="#FF7E6B"/>
+          <!-- Joyful Heart & Sound Bubbles Between -->
+          <path d="M200 76 C195 69 185 71 185 79 C185 87 200 95 200 95 C200 95 215 87 215 79 C215 71 205 69 200 76 Z" fill="#FF7E6B"/>
+          <circle cx="192" cy="116" r="5" fill="#4CC9B0"/>
+          <circle cx="208" cy="122" r="4" fill="#A688FA"/>
+        </svg>
+      `,
+      gentleTouch: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFF3D6"/>
+          <circle cx="200" cy="105" r="74" fill="#FFFFFF"/>
+          <!-- Soft Warm Clouds & Gentle Waves -->
+          <path d="M110 132 Q155 106 200 124 T290 116" stroke="#FFCA4B" stroke-width="6" stroke-linecap="round"/>
+          <path d="M122 148 Q165 124 205 140 T280 134" stroke="#4CC9B0" stroke-width="5" stroke-linecap="round"/>
+          <!-- Friendly Feather / Botanical Touch Motif -->
+          <path d="M156 106 C174 68 218 58 246 72 C232 102 194 116 156 106 Z" fill="#FF9E8D"/>
+          <path d="M156 106 Q198 88 246 72" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+          <!-- Floating Warm Circles -->
+          <circle cx="146" cy="74" r="10" fill="#A688FA" fill-opacity="0.6"/>
+          <circle cx="256" cy="112" r="8" fill="#5AB2FF" fill-opacity="0.7"/>
+        </svg>
+      `,
+      rattleArc: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#E6F3FF"/>
+          <!-- Rainbow Dotted Tracking Arc -->
+          <path d="M88 134 Q200 38 312 134" stroke="#5AB2FF" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+          <!-- Side Ghost Circles -->
+          <circle cx="94" cy="128" r="16" fill="#FFFFFF" stroke="#9ED0FF" stroke-width="3"/>
+          <circle cx="306" cy="128" r="16" fill="#FFFFFF" stroke="#9ED0FF" stroke-width="3"/>
+          <!-- Cheerful Rattle in Center -->
+          <g transform="rotate(-16 200 88)">
+            <rect x="194" y="88" width="12" height="52" rx="6" fill="#FFCA4B"/>
+            <circle cx="200" cy="68" r="24" fill="#FF7E6B"/>
+            <circle cx="200" cy="68" r="11" fill="#FFFFFF"/>
+            <circle cx="200" cy="144" r="9" fill="#4CC9B0"/>
+          </g>
+          <!-- Sound Waves -->
+          <path d="M162 54 Q154 68 162 82" stroke="#4CC9B0" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M238 54 Q246 68 238 82" stroke="#4CC9B0" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+      `,
+      bicycleLegs: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFEBE7"/>
+          <circle cx="200" cy="105" r="72" fill="#FFFFFF"/>
+          <!-- Colorful Bicycle Wheels / Motion Loops -->
+          <circle cx="174" cy="105" r="34" stroke="#FF7E6B" stroke-width="5" stroke-dasharray="10 8"/>
+          <circle cx="228" cy="105" r="34" stroke="#FFCA4B" stroke-width="5" stroke-dasharray="10 8"/>
+          <!-- Cute Striped Baby Socks / Feet -->
+          <g transform="rotate(-18 164 88)">
+            <rect x="142" y="76" width="38" height="22" rx="11" fill="#4CC9B0"/>
+            <path d="M154 76 V98 M164 76 V98" stroke="#FFFFFF" stroke-width="3"/>
+          </g>
+          <g transform="rotate(15 236 120)">
+            <rect x="218" y="108" width="38" height="22" rx="11" fill="#A688FA"/>
+            <path d="M230 108 V130 M240 108 V130" stroke="#FFFFFF" stroke-width="3"/>
+          </g>
+        </svg>
+      `,
+      textureBasket: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFF4D8"/>
+          <!-- Soft Woven Basket -->
+          <path d="M114 118 H286 L264 170 H136 L114 118 Z" fill="#FFCA4B"/>
+          <path d="M122 136 H278 M129 153 H271" stroke="#FFF4D8" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Tactile Treasures Popping Out -->
+          <!-- Wooden Teething Ring -->
+          <circle cx="158" cy="96" r="24" fill="#FF9E8D"/>
+          <circle cx="158" cy="96" r="10" fill="#FFF4D8"/>
+          <!-- Soft Sky Cloud Cloth -->
+          <path d="M188 118 C184 82 214 66 226 88 C236 106 218 118 218 118 Z" fill="#5AB2FF"/>
+          <!-- Mint Textured Ball -->
+          <circle cx="246" cy="98" r="21" fill="#4CC9B0"/>
+          <circle cx="240" cy="92" r="3" fill="#FFFFFF"/>
+          <circle cx="252" cy="95" r="3" fill="#FFFFFF"/>
+          <circle cx="245" cy="105" r="3" fill="#FFFFFF"/>
+        </svg>
+      `,
+      happyRoll: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFEBE7"/>
+          <rect x="44" y="156" width="312" height="18" rx="9" fill="#FFD1C9"/>
+          <!-- Playful Roll Arrow -->
+          <path d="M138 72 C176 42 228 44 258 76" stroke="#FF7E6B" stroke-width="5" stroke-linecap="round"/>
+          <path d="M244 79 L260 79 L259 63" stroke="#FF7E6B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Rolling Pillows / Shapes -->
+          <rect x="108" y="112" width="66" height="34" rx="17" fill="#FFFFFF" stroke="#FFCA4B" stroke-width="4"/>
+          <rect x="196" y="92" width="66" height="34" rx="17" transform="rotate(34 196 92)" fill="#4CC9B0"/>
+          <!-- Bright Ball Target -->
+          <circle cx="294" cy="134" r="20" fill="#FFCA4B"/>
+          <path d="M280 124 Q294 134 308 124" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+      `,
+      peekabooScarf: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#EFEAFF"/>
+          <!-- Smiling Sun Character Peeking -->
+          <circle cx="200" cy="86" r="40" fill="#FFCA4B"/>
+          <circle cx="187" cy="78" r="3.5" fill="#3B3547"/>
+          <circle cx="213" cy="78" r="3.5" fill="#3B3547"/>
+          <circle cx="181" cy="88" r="5" fill="#FF7E6B" fill-opacity="0.55"/>
+          <circle cx="219" cy="88" r="5" fill="#FF7E6B" fill-opacity="0.55"/>
+          <path d="M190 92 Q200 103 210 92" stroke="#3B3547" stroke-width="3" stroke-linecap="round"/>
+          <!-- Wavy Translucent Muslin Scarf -->
+          <path d="M132 102 Q166 90 200 102 Q234 114 268 102 L278 172 Q240 162 200 172 Q160 182 122 172 Z" fill="#5AB2FF" fill-opacity="0.85"/>
+          <circle cx="164" cy="134" r="5" fill="#FFFFFF" fill-opacity="0.7"/>
+          <circle cx="204" cy="142" r="6" fill="#FFFFFF" fill-opacity="0.7"/>
+          <circle cx="238" cy="130" r="5" fill="#FFFFFF" fill-opacity="0.7"/>
+        </svg>
+      `,
+      magicMirror: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#E3F8F3"/>
+          <!-- Rounded Arch Mirror -->
+          <path d="M142 174 V92 C142 60 168 34 200 34 C232 34 258 60 258 92 V174 H142 Z" fill="#FFCA4B"/>
+          <path d="M153 174 V93 C153 67 174 46 200 46 C226 46 247 67 247 93 V174 H153 Z" fill="#E8F6FF"/>
+          <!-- Reflection Shine -->
+          <path d="M170 76 L190 56 M168 96 L206 58" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+          <!-- Cute Baby Reflection Inside -->
+          <circle cx="200" cy="116" r="24" fill="#FFE2CE"/>
+          <circle cx="192" cy="113" r="2.8" fill="#3B3547"/>
+          <circle cx="208" cy="113" r="2.8" fill="#3B3547"/>
+          <path d="M194 123 Q200 129 206 123" stroke="#FF7E6B" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M168 174 C172 152 184 142 200 142 C216 142 228 152 232 174 Z" fill="#4CC9B0"/>
+        </svg>
+      `,
+      musicalChimes: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#E6F3FF"/>
+          <!-- Friendly Speech & Melody Bubbles -->
+          <rect x="86" y="48" width="118" height="66" rx="33" fill="#FFFFFF" stroke="#5AB2FF" stroke-width="3.5"/>
+          <path d="M118 81 Q131 67 144 81 T170 81" stroke="#FF7E6B" stroke-width="4" stroke-linecap="round"/>
+          <rect x="196" y="96" width="118" height="66" rx="33" fill="#FFCA4B"/>
+          <circle cx="235" cy="129" r="5" fill="#FFFFFF"/>
+          <circle cx="255" cy="129" r="5" fill="#FFFFFF"/>
+          <circle cx="275" cy="129" r="5" fill="#FFFFFF"/>
+          <!-- Musical Note Shapes -->
+          <circle cx="256" cy="58" r="8" fill="#A688FA"/>
+          <path d="M262 58 V36 L276 40" stroke="#A688FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      `,
+      playGymReach: `
+        <svg viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="400" height="210" fill="#FFEBE7"/>
+          <!-- Wooden / Pastel Play Gym Arch -->
+          <path d="M84 176 L132 46 H268 L316 176" stroke="#FFCA4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Hanging Toys -->
+          <line x1="162" y1="46" x2="162" y2="96" stroke="#A688FA" stroke-width="3"/>
+          <circle cx="162" cy="110" r="16" fill="#4CC9B0"/>
+          <line x1="202" y1="46" x2="202" y2="108" stroke="#A688FA" stroke-width="3"/>
+          <circle cx="202" cy="124" r="18" fill="#FF7E6B"/>
+          <circle cx="202" cy="124" r="7" fill="#FFFFFF"/>
+          <line x1="242" y1="46" x2="242" y2="92" stroke="#A688FA" stroke-width="3"/>
+          <polygon points="242,92 227,118 257,118" fill="#5AB2FF"/>
+          <!-- Reaching Little Hand -->
+          <path d="M188 184 L198 152 C200 145 207 145 208 152 L209 162" stroke="#FFE2CE" stroke-width="12" stroke-linecap="round"/>
+        </svg>
+      `
+    };
+
+    // =========================================================================
+    // 2. SKILL COLOR THEMES (Vibrant Pastel-Saturated Accents)
+    // =========================================================================
+    const skillThemes = {
+      'Моторика': {
+        badgeBg: 'bg-coralLight',
+        badgeText: 'text-coralDark',
+        dot: 'bg-coral',
+        borderAccent: 'hover:border-coral/60',
+        stepBg: 'bg-coralLight text-coralDark',
+      },
+      'Сенсорика': {
+        badgeBg: 'bg-sunLight',
+        badgeText: 'text-sunDark',
+        dot: 'bg-sun',
+        borderAccent: 'hover:border-sun',
+        stepBg: 'bg-sunLight text-sunDark',
+      },
+      'Речь и слух': {
+        badgeBg: 'bg-skyLight',
+        badgeText: 'text-skyDark',
+        dot: 'bg-sky',
+        borderAccent: 'hover:border-sky/60',
+        stepBg: 'bg-skyLight text-skyDark',
+      },
+      'Эмоции и контакт': {
+        badgeBg: 'bg-mintLight',
+        badgeText: 'text-mintDark',
+        dot: 'bg-mint',
+        borderAccent: 'hover:border-mint/70',
+        stepBg: 'bg-mintLight text-mintDark',
+      },
+    };
+
+    // =========================================================================
+    // 3. EXERCISES DATA (12 Exercises: 6 for 0–3m & 6 for 3–6m)
+    // =========================================================================
+    const exercises = [
+      // --- 0–3 МЕСЯЦА ---
+      {
+        id: 'book-01',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Сенсорика',
+        goal: 'Фокусировка взгляда и контрастное зрение',
+        title: 'Чёрно-белые картинки-загадки',
+        illustration: bookIllustrations.contrastSunAndCloud,
+        whyImportant:
+          'В первые два месяца зрение малыша только настраивается: ему сложно различать полутона, зато крупные контрастные узоры притягивают взгляд и помогают мозгу быстрее выстраивать зрительные связи.',
+        materials: ['2–3 контрастные карточки', 'Или лист бумаги с крупным рисунком'],
+        steps: [
+          'Дождитесь спокойного бодрствования, когда малыш лежит на спинке или у вас на коленях.',
+          'Держите карточку в 20–30 см от лица — на этом расстоянии малыш видит чётче всего.',
+          'Подождите 10–15 секунд, пока взгляд сфокусируется, и плавно сместите картинку вбок.',
+          'Завершите игру через пару минут, как только ребёнок отведёт глаза в сторону.'
+        ]
+      },
+      {
+        id: 'book-02',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Моторика',
+        goal: 'Укрепление мышц шеи, спины и плечевого пояса',
+        title: 'Минутки на животике с валиком',
+        illustration: bookIllustrations.tummyTimePillow,
+        whyImportant:
+          'Выкладывание на живот — главная тренировка первого полугодия. Она учит малыша уверенно поднимать голову, опираться на предплечья и готовит спину к будущим переворотам и ползанию.',
+        materials: ['Мягкий коврик', 'Свёрнутая валиком пелёнка', 'Яркая игрушка'],
+        steps: [
+          'Сверните мягкую пелёнку в небольшой рулон и подложите её под грудь и подмышки малыша.',
+          'Лягте на коврик напротив, чтобы ребёнок видел ваше лицо и улыбку на уровне своих глаз.',
+          'Начинайте с 1–2 минут несколько раз в день после смены подгузника.',
+          'Постепенно увеличивайте время на животике до 15–20 минут суммарно за день.'
+        ]
+      },
+      {
+        id: 'book-03',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Эмоции и контакт',
+        goal: 'Первая улыбка, мимика и чувство безопасности',
+        title: 'Весёлые гримасы лицом к лицу',
+        illustration: bookIllustrations.smilingDialogue,
+        whyImportant:
+          'Лицо взрослого — самый интересный объект для новорождённого. Благодаря зеркальным нейронам малыш учится копировать мимику, открывает силу улыбки и чувствует эмоциональное тепло.',
+        materials: ['Только ваше внимание и улыбка'],
+        steps: [
+          'Расположите своё лицо в 25–30 см от малыша, поймайте его взгляд.',
+          'Широко улыбнитесь или вытяните губы трубочкой и подождите 5–7 секунд — малышу нужно время на ответ.',
+          'Если ребёнок повторил движение или издал звук, радостно кивните и повторите за ним.',
+          'Разговаривайте мягким, певучим голосом с выразительными паузами.'
+        ]
+      },
+      {
+        id: 'book-04',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Сенсорика',
+        goal: 'Ощущение границ тела и расслабление',
+        title: 'Тёплый массаж «Пальчиковый дождик»',
+        illustration: bookIllustrations.gentleTouch,
+        whyImportant:
+          'Нежные, уверенные прикосновения помогают малышу почувствовать своё тело, снимают напряжение после дня впечатлений и улучшают пищеварение и сон.',
+        materials: ['Тёплые ладони', 'Мягкое полотенце', 'Капля детского масла (по желанию)'],
+        steps: [
+          'Согрейте ладони друг о друга и ласково предупредите малыша перед началом массажа.',
+          'Медленно погладьте ручки от плеч к ладошкам и ножки от бёдер к стопам.',
+          'Мягкими круговыми движениями погладьте животик по часовой стрелке.',
+          'Завершите лёгкими постукиваниями подушечками пальцев по спинке, словно тёплый летний дождик.'
+        ]
+      },
+      {
+        id: 'book-05',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Речь и слух',
+        goal: 'Слуховое внимание и плавное слежение взглядом',
+        title: 'Путешествие погремушки по радуге',
+        illustration: bookIllustrations.rattleArc,
+        whyImportant:
+          'Игра учит связывать звук с движущимся предметом и тренирует мышцы глаз, чтобы малыш мог плавно провожать игрушку взглядом без резких движений головой.',
+        materials: ['Лёгкая погремушка с нежным звуком'],
+        steps: [
+          'Положите малыша на спинку и тихонько позвените погремушкой в 30 см над грудью.',
+          'Дождитесь, пока ребёнок найдёт игрушку глазами и зафиксирует взгляд.',
+          'Очень медленно ведите погремушку по воображаемой дуге влево, затем обратно через центр вправо.',
+          'Повторите 3–4 раза в спокойном темпе, меняя стороны.'
+        ]
+      },
+      {
+        id: 'book-06',
+        age: '0-3',
+        ageLabel: '0–3 месяца',
+        skill: 'Моторика',
+        goal: 'Мягкое снятие тонуса и координация ножек',
+        title: 'Весёлый велосипед и ладушки стопами',
+        illustration: bookIllustrations.bicycleLegs,
+        whyImportant:
+          'Плавные пассивные движения помогают постепенно расслабить естественный тонус сгибателей, улучшают кровообращение и мягко помогают животику.',
+        materials: ['Пеленальный столик или тёплый коврик'],
+        steps: [
+          'Бережно обхватите голени малыша тёплыми ладонями, не сдавливая суставы.',
+          'По очереди сгибайте одну ножку к животику, а вторую плавно выпрямляйте, имитируя езду на велосипеде.',
+          'Сделайте 6–8 неспешных кругов под ритмичный стишок.',
+          'В конце аккуратно соедините стопы малыша вместе и похлопайте ими друг о друга.'
+        ]
+      },
+
+      // --- 3–6 МЕСЯЦЕВ ---
+      {
+        id: 'book-07',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Сенсорика',
+        goal: 'Осознанный захват и изучение текстур',
+        title: 'Корзинка тактильных сокровищ',
+        illustration: bookIllustrations.textureBasket,
+        whyImportant:
+          'После трёх месяцев малыш учится осознанно раскрывать ладонь и хватать предметы. Разные поверхности (гладкое дерево, мягкая ткань, ребристый силикон) активно развивают мелкую моторику и мозг.',
+        materials: ['Деревянное кольцо', 'Муслиновый платочек', 'Силиконовый грызунок', 'Небольшая корзинка'],
+        steps: [
+          'Положите перед малышом 2–3 крупных безопасных предмета с разной фактурой.',
+          'Вложите в ладошку деревянное кольцо или проведите по ручке мягким платочком, называя ощущения.',
+          'Дайте время переложить игрушку из одной руки в другую и изучить её.',
+          'Обновляйте набор каждые 2–3 дня, чтобы сохранять живой интерес.'
+        ]
+      },
+      {
+        id: 'book-08',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Моторика',
+        goal: 'Координация корпуса и навык переворота',
+        title: 'Потягушки-перевороты за игрушкой',
+        illustration: bookIllustrations.happyRoll,
+        whyImportant:
+          'Первый переворот со спины на живот требует слаженной работы мышц пресса, спины и умения переносить вес тела через среднюю линию.',
+        materials: ['Коврик на полу', 'Любимая яркая игрушка'],
+        steps: [
+          'Положите яркую игрушку сбоку от малыша на расстоянии вытянутой руки, чуть выше плеча.',
+          'Когда ребёнок потянется за ней верхней ручкой, мягко согните противоположную ножку в колене и заведите её в сторону поворота.',
+          'Остановитесь на полпути и дайте малышу самому закончить переворот плечом и головой.',
+          'Повторите игру в другую сторону для равномерного развития мышц.'
+        ]
+      },
+      {
+        id: 'book-09',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Эмоции и контакт',
+        goal: 'Понимание постоянства объекта и радость общения',
+        title: 'Волшебный платочек «Ку-ку»',
+        illustration: bookIllustrations.peekabooScarf,
+        whyImportant:
+          'Игра открывает малышу важный закон мира: если мама или игрушка спрятались за платочком, они не исчезли навсегда. Это развивает память и снижает тревожность.',
+        materials: ['Лёгкий полупрозрачный шарфик или муслиновая пелёнка'],
+        steps: [
+          'Накиньте лёгкий дышащий платочек на своё лицо и спросите: «Где мама?» — затем с улыбкой снимите и скажите: «Ку-ку!»',
+          'Накройте платочком любимую игрушку, оставив на виду её уголок, чтобы малыш сам стянул ткань.',
+          'На секунду прикройте прозрачным шарфиком ручку ребёнка и порадуйтесь, когда он её освободит.',
+          'Повторяйте игру с одинаковой весёлой интонацией — малыш обожает предсказуемый сюжет.'
+        ]
+      },
+      {
+        id: 'book-10',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Эмоции и контакт',
+        goal: 'Зрительное внимание и изучение эмоций',
+        title: 'Знакомство с другом в зеркале',
+        illustration: bookIllustrations.magicMirror,
+        whyImportant:
+          'Малыш с восторгом наблюдает за «другим малышом» в отражении: это мотивирует его дольше стоять на вытянутых руках на животе и экспериментировать с мимикой.',
+        materials: ['Небьющееся детское зеркало'],
+        steps: [
+          'Поставьте безопасное небьющееся зеркало перед малышом, когда он лежит на животе.',
+          'Сядьте рядом так, чтобы в зеркале были видны вы оба, и помашите отражению рукой.',
+          'Коснитесь носика или щёчки ребёнка, называя части лица вслух.',
+          'Позвольте малышу похлопать ладошкой по гладкому зеркалу.'
+        ]
+      },
+      {
+        id: 'book-11',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Речь и слух',
+        goal: 'Развитие гуления, интонации и речевого диалога',
+        title: 'Музыкальные переклички и потешки',
+        illustration: bookIllustrations.musicalChimes,
+        whyImportant:
+          'В 3–6 месяцев малыш начинает распевно гулить и пробовать первые согласные звуки. Когда взрослый подхватывает его «песенку», формируется база будущей речи.',
+        materials: ['Только ваш голос и тишина без фонового телевизора'],
+        steps: [
+          'Услышав распевное гуление малыша («а-гу», «ма-а», «бу-у»), повторите его с той же мелодией.',
+          'Добавьте в ответ новый простой слог («ля-ля», «ба-ба») и выдержите паузу.',
+          'Сопровождайте ежедневное умывание и потягивания короткими ритмичными потешками.',
+          'Хвалите каждый звук улыбкой — так малыш понимает, что его слышат и понимают.'
+        ]
+      },
+      {
+        id: 'book-12',
+        age: '3-6',
+        ageLabel: '3–6 месяцев',
+        skill: 'Моторика',
+        goal: 'Зрительно-моторная координация и прицельный захват',
+        title: 'Дотянись до подвески',
+        illustration: bookIllustrations.playGymReach,
+        whyImportant:
+          'Чтобы попасть ручкой по висящей игрушке, мозг малыша учится рассчитывать расстояние и соединять движение глаз с точным движением плеча, локтя и кисти.',
+        materials: ['Деревянная или мягкая дуга с подвесными игрушками'],
+        steps: [
+          'Разместите подвеску над грудью малыша ровно на расстоянии его вытянутой руки.',
+          'Слегка качните игрушку, чтобы она мягко звякнула или качнулась, привлекая внимание.',
+          'Дайте ребёнку время прицелиться: сначала он будет бить по игрушке кулачком, а позже — обхватывать ладонью.',
+          'Перевешивайте игрушку то чуть левее, то правее, чтобы работали обе ручки.'
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 4. STATE & LOCALSTORAGE (Unique key separate from Kinfolk edition)
+    // =========================================================================
+    const STORAGE_KEY = 'illustrated_baby_play_progress_v2';
+
+    const state = {
+      completedIds: new Set(),
+      selectedAge: 'all',
+      selectedSkill: 'all',
+      hideCompleted: false,
+      focusedId: null,
+    };
+
+    function loadProgress() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const arr = JSON.parse(raw);
+          if (Array.isArray(arr)) {
+            state.completedIds = new Set(arr);
+          }
+        }
+      } catch (err) {
+        console.warn('Ошибка чтения localStorage:', err);
+      }
+    }
+
+    function saveProgress() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.completedIds]));
+      } catch (err) {
+        console.warn('Ошибка записи в localStorage:', err);
+      }
+    }
+
+    // =========================================================================
+    // 5. DOM REFERENCES & RENDER FUNCTIONS
+    // =========================================================================
+    const gridEl = document.getElementById('cards-grid');
+    const emptyStateEl = document.getElementById('empty-state');
+    const resultsCaptionEl = document.getElementById('results-caption');
+    const totalProgressBadgeEl = document.getElementById('total-progress-badge');
+    const totalProgressBarEl = document.getElementById('total-progress-bar');
+    const progress03El = document.getElementById('progress-0-3');
+    const progress36El = document.getElementById('progress-3-6');
+
+    // Focus modal elements
+    const focusModalEl = document.getElementById('focus-modal');
+    const focusBodyEl = document.getElementById('focus-modal-body');
+    const focusFooterEl = document.getElementById('focus-modal-footer');
+    const focusCounterEl = document.getElementById('focus-counter');
+
+    function updateProgressDashboard() {
+      const total = exercises.length;
+      const doneTotal = state.completedIds.size;
+      const pct = Math.round((doneTotal / total) * 100);
+
+      totalProgressBadgeEl.textContent = `${doneTotal} из ${total} игр`;
+      totalProgressBarEl.style.width = `${pct}%`;
+
+      const ex03 = exercises.filter((e) => e.age === '0-3');
+      const done03 = ex03.filter((e) => state.completedIds.has(e.id)).length;
+      progress03El.textContent = `${done03} / ${ex03.length}`;
+
+      const ex36 = exercises.filter((e) => e.age === '3-6');
+      const done36 = ex36.filter((e) => state.completedIds.has(e.id)).length;
+      progress36El.textContent = `${done36} / ${ex36.length}`;
+    }
+
+    function getFilteredExercises() {
+      return exercises.filter((ex) => {
+        const okAge = state.selectedAge === 'all' || ex.age === state.selectedAge;
+        const okSkill = state.selectedSkill === 'all' || ex.skill === state.selectedSkill;
+        const okDone = !state.hideCompleted || !state.completedIds.has(ex.id);
+        return okAge && okSkill && okDone;
+      });
+    }
+
+    function renderGrid() {
+      const filtered = getFilteredExercises();
+
+      resultsCaptionEl.textContent =
+        filtered.length === exercises.length
+          ? `Показаны все ${exercises.length} карточек`
+          : `Показано карточек: ${filtered.length} из ${exercises.length}`;
+
+      if (filtered.length === 0) {
+        gridEl.innerHTML = '';
+        emptyStateEl.classList.remove('hidden');
+        return;
+      }
+
+      emptyStateEl.classList.add('hidden');
+
+      gridEl.innerHTML = filtered
+        .map((ex, idx) => {
+          const isDone = state.completedIds.has(ex.id);
+          const theme = skillThemes[ex.skill] || skillThemes['Моторика'];
+
+          const materialsTags = ex.materials
+            .map(
+              (mat) => `
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-cream border border-[#EFE6D6] text-xs font-medium text-ink">
+                ${mat}
+              </span>
+            `
+            )
+            .join('');
+
+          const stepsList = ex.steps
+            .map(
+              (step, sIdx) => `
+              <li class="flex items-start gap-3 text-sm text-ink/90 leading-relaxed">
+                <span class="w-6 h-6 rounded-full ${theme.stepBg} font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  ${sIdx + 1}
+                </span>
+                <span>${step}</span>
+              </li>
+            `
+            )
+            .join('');
+
+          return `
+            <article
+              data-card-id="${ex.id}"
+              style="animation-delay: ${Math.min(idx * 40, 280)}ms"
+              class="story-card animate-card-in bg-white border-2 ${
+                isDone ? 'border-mint/70 bg-[#FAFDFC]' : 'border-[#F2ECE1] ' + theme.borderAccent
+              } shadow-tactile hover:shadow-tactileHover overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <!-- Illustrated Storybook Header (Clickable for Focus Mode) -->
+                <div
+                  data-open-focus="${ex.id}"
+                  class="relative aspect-[16/8.4] w-full overflow-hidden cursor-pointer group"
+                >
+                  ${ex.illustration}
+
+                  <!-- Age Pill -->
+                  <span class="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-xs shadow-sm font-display font-extrabold text-xs text-ink">
+                    ${ex.ageLabel}
+                  </span>
+
+                  <!-- Focus Mode Expand Pill -->
+                  <button
+                    type="button"
+                    data-open-focus="${ex.id}"
+                    class="absolute top-3.5 right-3.5 px-3 py-1.5 rounded-full bg-white/95 hover:bg-white shadow-sm font-display font-bold text-xs text-ink inline-flex items-center gap-1.5 transition-transform group-hover:scale-105"
+                    title="Открыть крупно для чтения одной рукой"
+                  >
+                    <svg class="w-3.5 h-3.5 text-slateSoft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                    <span>Крупно</span>
+                  </button>
+                </div>
+
+                <!-- Card Content -->
+                <div class="p-6 sm:p-7">
+                  <!-- Skill & Goal Badge -->
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full ${theme.badgeBg} ${theme.badgeText} font-display font-extrabold text-xs">
+                      <span class="w-2 h-2 rounded-full ${theme.dot}"></span>
+                      <span>${ex.skill}</span>
+                    </span>
+                    <span class="text-xs font-medium text-slateSoft">
+                      &middot; ${ex.goal}
+                    </span>
+                  </div>
+
+                  <!-- Title (Clickable for Focus Mode) -->
+                  <h2
+                    data-open-focus="${ex.id}"
+                    class="font-display font-black text-xl sm:text-2xl text-ink leading-snug mb-4 cursor-pointer hover:text-coralDark transition-colors"
+                  >
+                    ${ex.title}
+                  </h2>
+
+                  <!-- Why It Matters -->
+                  <div class="bg-[#FAF7F2] rounded-2xl p-4 mb-4 border border-[#F1EAE0]">
+                    <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-1.5">
+                      Зачем это нужно
+                    </h3>
+                    <p class="text-sm text-ink/85 leading-relaxed">
+                      ${ex.whyImportant}
+                    </p>
+                  </div>
+
+                  <!-- Materials Tags -->
+                  <div class="mb-5">
+                    <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-2">
+                      Что понадобится
+                    </h3>
+                    <div class="flex flex-wrap gap-1.5">
+                      ${materialsTags}
+                    </div>
+                  </div>
+
+                  <!-- Numbered Steps -->
+                  <div>
+                    <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-2.5">
+                      Пошаговая инструкция
+                    </h3>
+                    <ol class="space-y-2.5">
+                      ${stepsList}
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tactile Large Completion Button Footer -->
+              <div class="px-6 sm:px-7 pb-6 pt-2">
+                <button
+                  type="button"
+                  data-toggle-id="${ex.id}"
+                  class="toggle-done-btn w-full py-3.5 px-5 rounded-2xl font-display font-extrabold text-sm flex items-center justify-center gap-2.5 transition-all cursor-pointer ${
+                    isDone
+                      ? 'bg-mint text-white shadow-sm'
+                      : 'bg-cream hover:bg-sunLight text-ink border-2 border-[#EFE6D6] hover:border-sun'
+                  }"
+                >
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+                      isDone ? 'bg-white text-mintDark' : 'bg-white border-2 border-[#D8CEBE]'
+                    }"
+                  >
+                    ${
+                      isDone
+                        ? `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>`
+                        : ''
+                    }
+                  </span>
+                  <span>${isDone ? 'Выполнено! Отличная игра' : 'Отметить выполненным'}</span>
+                </button>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+    }
+
+    // =========================================================================
+    // 6. FOCUS MODE (One-handed full card reading modal)
+    // =========================================================================
+    function renderFocusModal() {
+      if (!state.focusedId) {
+        focusModalEl.classList.add('hidden');
+        document.body.style.overflow = '';
+        return;
+      }
+
+      const list = getFilteredExercises().length > 0 ? getFilteredExercises() : exercises;
+      let idx = list.findIndex((item) => item.id === state.focusedId);
+      if (idx === -1) {
+        idx = 0;
+        state.focusedId = list[0].id;
+      }
+
+      const ex = list[idx];
+      const isDone = state.completedIds.has(ex.id);
+      const theme = skillThemes[ex.skill] || skillThemes['Моторика'];
+
+      focusCounterEl.textContent = `Карточка ${idx + 1} из ${list.length}`;
+
+      const materialsTags = ex.materials
+        .map(
+          (mat) => `
+          <span class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-[#EAE0D0] text-xs sm:text-sm font-medium text-ink">
+            ${mat}
+          </span>
+        `
+        )
+        .join('');
+
+      const stepsList = ex.steps
+        .map(
+          (step, sIdx) => `
+          <li class="flex items-start gap-3.5 text-base text-ink leading-relaxed bg-white p-4 rounded-2xl border border-[#F0E9DD]">
+            <span class="w-7 h-7 rounded-full ${theme.stepBg} font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
+              ${sIdx + 1}
+            </span>
+            <span>${step}</span>
+          </li>
+        `
+        )
+        .join('');
+
+      focusBodyEl.innerHTML = `
+        <div class="rounded-[24px] overflow-hidden border-2 border-white shadow-sm aspect-[16/8.2]">
+          ${ex.illustration}
+        </div>
+
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="px-3.5 py-1 rounded-full bg-white border border-[#EAE0D0] font-display font-extrabold text-xs text-ink">
+              ${ex.ageLabel}
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.badgeBg} ${theme.badgeText} font-display font-extrabold text-xs">
+              <span class="w-2 h-2 rounded-full ${theme.dot}"></span>
+              <span>${ex.skill}</span>
+            </span>
+          </div>
+
+          <h2 class="font-display font-black text-2xl sm:text-3xl text-ink leading-tight mb-2">
+            ${ex.title}
+          </h2>
+          <p class="text-sm font-medium text-slateSoft">
+            Цель: ${ex.goal}
+          </p>
+        </div>
+
+        <div class="bg-cream rounded-[24px] p-5 border border-[#F0E6D6]">
+          <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-1.5">
+            Зачем это нужно
+          </h3>
+          <p class="text-sm sm:text-base text-ink/90 leading-relaxed">
+            ${ex.whyImportant}
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-2.5">
+            Что понадобится
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            ${materialsTags}
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-extrabold text-xs uppercase tracking-wider text-slateSoft mb-3">
+            Пошаговая инструкция
+          </h3>
+          <ol class="space-y-3">
+            ${stepsList}
+          </ol>
+        </div>
+      `;
+
+      focusFooterEl.innerHTML = `
+        <button
+          type="button"
+          data-toggle-id="${ex.id}"
+          class="toggle-done-btn w-full py-4 px-6 rounded-2xl font-display font-extrabold text-base flex items-center justify-center gap-3 transition-all cursor-pointer ${
+            isDone
+              ? 'bg-mint text-white shadow-md'
+              : 'bg-sun hover:brightness-105 text-ink shadow-sm'
+          }"
+        >
+          <span
+            class="w-7 h-7 rounded-full flex items-center justify-center ${
+              isDone ? 'bg-white text-mintDark' : 'bg-white/80 text-ink'
+            }"
+          >
+            ${
+              isDone
+                ? `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>`
+                : `<span class="w-2.5 h-2.5 rounded-full bg-ink/30"></span>`
+            }
+          </span>
+          <span>${isDone ? 'Выполнено! Нажмите, чтобы снять отметку' : 'Отметить упражнение выполненным'}</span>
+        </button>
+      `;
+
+      focusModalEl.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function navigateFocus(direction) {
+      if (!state.focusedId) return;
+      const list = getFilteredExercises().length > 0 ? getFilteredExercises() : exercises;
+      const currentIdx = list.findIndex((item) => item.id === state.focusedId);
+      const nextIdx = (currentIdx + direction + list.length) % list.length;
+      state.focusedId = list[nextIdx].id;
+      focusBodyEl.scrollTop = 0;
+      renderFocusModal();
+    }
+
+    // =========================================================================
+    // 7. INTERACTION HANDLERS
+    // =========================================================================
+    function toggleExerciseCompletion(id, triggerBtn) {
+      if (state.completedIds.has(id)) {
+        state.completedIds.delete(id);
+      } else {
+        state.completedIds.add(id);
+      }
+      saveProgress();
+      updateProgressDashboard();
+      renderGrid();
+
+      if (state.focusedId) {
+        renderFocusModal();
+      }
+
+      // Apply pop bounce feedback on the newly rendered button
+      requestAnimationFrame(() => {
+        const updatedBtn = document.querySelector(`[data-toggle-id="${id}"]`);
+        if (updatedBtn) {
+          updatedBtn.classList.add('animate-pop');
+        }
+      });
+    }
+
+    // Delegate clicks in main grid
+    gridEl.addEventListener('click', (e) => {
+      const toggleBtn = e.target.closest('[data-toggle-id]');
+      if (toggleBtn) {
+        e.stopPropagation();
+        const id = toggleBtn.getAttribute('data-toggle-id');
+        toggleExerciseCompletion(id, toggleBtn);
+        return;
+      }
+
+      const focusTrigger = e.target.closest('[data-open-focus]');
+      if (focusTrigger) {
+        state.focusedId = focusTrigger.getAttribute('data-open-focus');
+        renderFocusModal();
+      }
+    });
+
+    // Delegate clicks in focus modal
+    focusModalEl.addEventListener('click', (e) => {
+      if (e.target === focusModalEl) {
+        state.focusedId = null;
+        renderFocusModal();
+        return;
+      }
+      const toggleBtn = e.target.closest('[data-toggle-id]');
+      if (toggleBtn) {
+        const id = toggleBtn.getAttribute('data-toggle-id');
+        toggleExerciseCompletion(id, toggleBtn);
+      }
+    });
+
+    document.getElementById('focus-close-btn').addEventListener('click', () => {
+      state.focusedId = null;
+      renderFocusModal();
+    });
+    document.getElementById('focus-prev-btn').addEventListener('click', () => navigateFocus(-1));
+    document.getElementById('focus-next-btn').addEventListener('click', () => navigateFocus(1));
+
+    // Keyboard navigation for Focus Modal
+    document.addEventListener('keydown', (e) => {
+      if (!state.focusedId) return;
+      if (e.key === 'Escape') {
+        state.focusedId = null;
+        renderFocusModal();
+      } else if (e.key === 'ArrowRight') {
+        navigateFocus(1);
+      } else if (e.key === 'ArrowLeft') {
+        navigateFocus(-1);
+      }
+    });
+
+    // Age Filter Tabs
+    document.querySelectorAll('.age-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.age-tab').forEach((t) => {
+          t.classList.remove('active', 'bg-white', 'text-ink', 'shadow-pill');
+          t.classList.add('text-slateSoft');
+        });
+        tab.classList.add('active', 'bg-white', 'text-ink', 'shadow-pill');
+        tab.classList.remove('text-slateSoft');
+
+        state.selectedAge = tab.getAttribute('data-age');
+        renderGrid();
+      });
+    });
+
+    // Skill Filter Chips
+    document.querySelectorAll('.skill-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.skill-chip').forEach((c) => {
+          c.classList.remove('ring-2', 'ring-ink', 'ring-offset-2');
+          if (c.getAttribute('data-skill') === 'all') {
+            c.classList.remove('bg-ink', 'text-white');
+            c.classList.add('bg-[#F2ECE1]', 'text-ink');
+          }
+        });
+
+        const skill = chip.getAttribute('data-skill');
+        if (skill === 'all') {
+          chip.classList.remove('bg-[#F2ECE1]', 'text-ink');
+          chip.classList.add('bg-ink', 'text-white');
+        } else {
+          chip.classList.add('ring-2', 'ring-ink', 'ring-offset-2');
+        }
+
+        state.selectedSkill = skill;
+        renderGrid();
+      });
+    });
+
+    // Hide Completed Toggle
+    const hideCompletedToggle = document.getElementById('hide-completed-toggle');
+    hideCompletedToggle.addEventListener('change', (e) => {
+      state.hideCompleted = e.target.checked;
+      renderGrid();
+    });
+
+    // Reset Filters Button
+    document.getElementById('reset-filters-btn').addEventListener('click', () => {
+      state.selectedAge = 'all';
+      state.selectedSkill = 'all';
+      state.hideCompleted = false;
+      hideCompletedToggle.checked = false;
+
+      document.querySelectorAll('.age-tab').forEach((t) => {
+        const isAll = t.getAttribute('data-age') === 'all';
+        t.classList.toggle('active', isAll);
+        t.classList.toggle('bg-white', isAll);
+        t.classList.toggle('text-ink', isAll);
+        t.classList.toggle('shadow-pill', isAll);
+        t.classList.toggle('text-slateSoft', !isAll);
+      });
+
+      document.querySelectorAll('.skill-chip').forEach((c) => {
+        c.classList.remove('ring-2', 'ring-ink', 'ring-offset-2');
+        const isAll = c.getAttribute('data-skill') === 'all';
+        if (isAll) {
+          c.classList.remove('bg-[#F2ECE1]', 'text-ink');
+          c.classList.add('bg-ink', 'text-white');
+        }
+      });
+
+      renderGrid();
+    });
+
+    // Reset Progress Confirmation Toast
+    const resetToastEl = document.getElementById('reset-toast');
+    document.getElementById('reset-progress-btn').addEventListener('click', () => {
+      if (state.completedIds.size === 0) return;
+      resetToastEl.classList.remove('hidden');
+    });
+    document.getElementById('confirm-reset-no').addEventListener('click', () => {
+      resetToastEl.classList.add('hidden');
+    });
+    document.getElementById('confirm-reset-yes').addEventListener('click', () => {
+      state.completedIds.clear();
+      saveProgress();
+      updateProgressDashboard();
+      renderGrid();
+      if (state.focusedId) renderFocusModal();
+      resetToastEl.classList.add('hidden');
+    });
+
+    // =========================================================================
+    // 8. INIT
+    // =========================================================================
+    loadProgress();
+    updateProgressDashboard();
+    renderGrid();
+  </script>
+</body>
+</html>
